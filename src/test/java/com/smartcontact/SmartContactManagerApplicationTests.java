@@ -1,10 +1,10 @@
-package com.audio.transcriber;
+package com.smartcontact;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AudioTranscriberApplicationTests {
+class SmartContactManagerApplicationTests {
 
 	@Test
 	void contextLoads() {

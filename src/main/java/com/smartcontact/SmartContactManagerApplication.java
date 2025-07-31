@@ -1,13 +1,13 @@
-package com.audio.transcriber;
+package com.smartcontact;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AudioTranscriberApplication {
+public class SmartContactManagerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AudioTranscriberApplication.class, args);
+		SpringApplication.run(SmartContactManagerApplication.class, args);
 	}
 
 }
