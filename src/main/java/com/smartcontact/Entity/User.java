@@ -3,6 +3,9 @@ package com.smartcontact.Entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -25,4 +28,7 @@ public class User {
     private String about;
     private String imageUrl;
     private boolean enabled;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Contact> contacts= new ArrayList<>();
 }
