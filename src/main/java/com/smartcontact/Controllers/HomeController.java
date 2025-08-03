@@ -13,13 +13,9 @@ public class HomeController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping("/test")
-    @ResponseBody
+    @GetMapping("/home")
+
     public String test(){
-        User user= new User();
-        user.setName("Test User");
-        user.setEmail("abc@ymail.in");
-        userRepository.save(user);
-        return "working";
+        return "home";
     }
 }
