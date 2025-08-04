@@ -23,8 +23,8 @@ public class Contact {
     private String email;
     private long mobile;
     private String imageUrl;
-    @Column(length = 5000)
-    private String desc;
+    @Column(length = 50)
+    private String description;
 
     @ManyToOne
     private User user;

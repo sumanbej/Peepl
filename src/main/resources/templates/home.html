@@ -1,14 +1,10 @@
-<!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base :: layout(~{::section})}">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="base :: layout(~{::body})">
 <head>
-    <title>HomePage</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
 </head>
 <body>
-<section>
-    <div class="text-center">
-        <h1 class="display-4">Hi there!</h1>
-        <p class="lead">Welcome to SmartContact. Manage your contacts smartly and efficiently.</p>
-    </div>
-</section>
+<h1 class="testing">Hello from Home</h1>
 </body>
 </html>
