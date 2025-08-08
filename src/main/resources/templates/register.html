@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base :: layout(~{::body})">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base :: layout(~{::body})}">
 <body>
 <div class="container d-flex justify-content-center align-items-center fade-in" style="min-height: 80vh;">
     <div class="auth-card" style="width: 100%; max-width: 500px;">
@@ -13,10 +13,7 @@
                 <label for="email">Email address</label>
                 <input type="email" th:field="*{email}" class="form-control" id="email" placeholder="name@example.com">
             </div>
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text"  th:field="*{username}" class="form-control" id="username" placeholder="Choose a username">
-            </div>
+
             <div class="form-group">
                 <label for="password1">Password</label>
                 <input type="password" th:field="*{password}" class="form-control" id="password1" placeholder="Create a password">
