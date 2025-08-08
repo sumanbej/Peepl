@@ -34,5 +34,6 @@ public class HomeController {
     @GetMapping("/register")
     public String register(Model model) {
         model.addAttribute("title", "Register - Peepl");
+        model.addAttribute("user", new User());
         return "register";}
 }
