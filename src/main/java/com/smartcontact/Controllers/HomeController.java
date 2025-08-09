@@ -54,6 +54,8 @@ private UserRepository userRepository;
         User user = new User();
         user.setName(request.getName());
         user.setEmail(request.getEmail());
+        user.setMobile(request.getMobile());
+        user.setAbout(request.getAbout());
         user.setPassword(request.getPassword());
         userRepository.save(user);
         System.out.println("User registered successfully: " + user.getName());
