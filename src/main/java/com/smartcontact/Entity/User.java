@@ -21,8 +21,8 @@ public class User {
     @Column(unique = true)
     private String email;
     private String password;
-    @Column(unique = true, length = 10, nullable = false)
-    private long mobile;
+    @Column( length = 10, nullable = false)
+    private String mobile;
     private String role;
     @Column(length = 500)
     private String about;
