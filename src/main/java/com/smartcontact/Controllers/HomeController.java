@@ -41,7 +41,14 @@ private UserRepository userRepository;
     public String register(Model model) {
         model.addAttribute("title", "Register - Peepl");
         model.addAttribute("user", new RegistrationRequest());
-        return "register";}
+        return "register";
+    }
+
+    //error handling
+    @GetMapping("/error")
+    public String errorHandler() {
+        return "error";
+    }
 
 
     @PostMapping("/register")
@@ -51,6 +58,18 @@ private UserRepository userRepository;
             model.addAttribute("error", "Passwords do not match.");
             return "register";
         }
+        // Mobile length validation
+        if (request.getMobile() == null || request.getMobile().length() != 10) {
+            model.addAttribute("error", "Mobile number must be exactly 10 digits.");
+            return "register";
+        }
+
+        // Check if email already exists
+        if (userRepository.findByEmail(request.getEmail()) != null) {
+            model.addAttribute("error", "This email already exists. Please login or use another email.");
+            return "register";
+        }
+
         User user = new User();
         user.setName(request.getName());
         user.setEmail(request.getEmail());
