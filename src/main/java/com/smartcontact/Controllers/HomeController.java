@@ -80,4 +80,16 @@ private UserRepository userRepository;
         System.out.println("User registered successfully: " + user.getName());
         return "redirect:/login";
     }
+
+    //login post mapping
+    @PostMapping("/login")
+    public String loginUser(@ModelAttribute("user") RegistrationRequest request, Model model) {
+        User user = userRepository.findByEmail(request.getEmail());
+        if (user == null || !user.getPassword().equals(request.getPassword())) {
+            model.addAttribute("error", "Invalid email or password.");
+            return "login";
+        }
+        // Successful login logic here
+        return "redirect:/home"; // Redirect to home page on successful login
+    }
 }
