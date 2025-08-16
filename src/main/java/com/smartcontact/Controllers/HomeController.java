@@ -1,5 +1,6 @@
 package com.smartcontact.Controllers;
 
+import com.smartcontact.DTO.LoginRequest;
 import com.smartcontact.DTO.RegistrationRequest;
 import com.smartcontact.Entity.User;
 import com.smartcontact.Repository.UserRepository;
@@ -83,13 +84,13 @@ private UserRepository userRepository;
 
     //login post mapping
     @PostMapping("/login")
-    public String loginUser(@ModelAttribute("user") RegistrationRequest request, Model model) {
+    public String loginUser(@ModelAttribute("user") LoginRequest request, Model model) {
         User user = userRepository.findByEmail(request.getEmail());
         if (user == null || !user.getPassword().equals(request.getPassword())) {
             model.addAttribute("error", "Invalid email or password.");
             return "login";
         }
-        // Successful login logic here
-        return "redirect:/home"; // Redirect to home page on successful login
+
+        return "redirect:/home";
     }
 }
