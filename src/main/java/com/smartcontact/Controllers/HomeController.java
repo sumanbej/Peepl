@@ -97,6 +97,6 @@ private UserRepository userRepository;
             return "login";
         }
 
-        return "redirect:/home";
+        return "redirect:/dashboard";
     }
 }
