@@ -81,6 +81,12 @@ private UserRepository userRepository;
         System.out.println("User registered successfully: " + user.getName());
         return "redirect:/login";
     }
+    //Dashboard mapping
+    @GetMapping("/dashboard")
+    public String dashboard(Model model) {
+        model.addAttribute("title", "Dashboard - Peepl");
+        return "dashboard";
+    }
 
     //login post mapping
     @PostMapping("/login")
