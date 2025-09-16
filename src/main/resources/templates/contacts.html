@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="base :: layout(~{::content})">
+<head>
+    <title>Your Contacts</title>
+</head>
+<body>
+<div th:fragment="content">
+    <div class="container fade-in">
+        <div class="auth-card">
+            <h2>Your Contacts</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Nickname</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Work</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="contact : ${contacts}">
+                    <td th:text="${contact.name}"></td>
+                    <td th:text="${contact.nickName}"></td>
+                    <td th:text="${contact.email}"></td>
+                    <td th:text="${contact.mobile}"></td>
+                    <td th:text="${contact.work}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
