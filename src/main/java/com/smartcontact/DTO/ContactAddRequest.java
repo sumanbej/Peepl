@@ -5,6 +5,7 @@ public class ContactAddRequest {
     private String email;
     private String phone;
     private String address;
+    private String imageUrl;
 
     // Getters and setters
     public String getName() { return name; }
@@ -18,4 +19,7 @@ public class ContactAddRequest {
 
     public String getAddress() { return address; }
     public void setAddress(String address) { this.address = address; }
+
+    public String getImageUrl() { return imageUrl; }
+    public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
 }
